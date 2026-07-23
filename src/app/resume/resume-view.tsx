@@ -12,7 +12,7 @@ const RESUME_PATH = "/Vaibhav_Resume.pdf";
 
 export default function ResumeView() {
   // The PDF is a static file the owner drops in; if it's absent the <iframe>
-  // renders an blank white page with no explanation. Probe it first so we can
+  // renders a blank white page with no explanation. Probe it first so we can
   // say what's wrong instead of showing a dead frame.
   const [missing, setMissing] = useState(false);
   useEffect(() => {
