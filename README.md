@@ -6,7 +6,7 @@ A jaw-dropping developer portfolio packed with interactive 3D animations, butter
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/VaibhavAG-02/portfolio)
 
-![Portfolio Preview](https://github.com/Naresh-Khatri/Portfolio/blob/main/public/assets/projects-screenshots/portfolio_new.png?raw=true)
+![Portfolio Preview](https://github.com/VaibhavAG-02/Portfolio/blob/main/public/assets/projects-screenshots/portfolio_new.png?raw=true)
 
 ## ✨ Features
 
