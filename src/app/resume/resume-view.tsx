@@ -7,13 +7,9 @@ import { Download, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResumeDoodle from "./resume-doodle";
 
-// Drop the compiled PDF here: public/Vaibhav_Resume.pdf
 const RESUME_PATH = "/Vaibhav_Resume.pdf";
 
 export default function ResumeView() {
-  // The PDF is a static file the owner drops in; if it's absent the <iframe>
-  // renders a blank white page with no explanation. Probe it first so we can
-  // say what's wrong instead of showing a dead frame.
   const [missing, setMissing] = useState(false);
   useEffect(() => {
     let alive = true;
@@ -27,7 +23,6 @@ export default function ResumeView() {
 
   return (
     <div className="flex min-h-screen flex-col font-sans">
-      {/* Hide the global nav on mobile, only while this page is mounted */}
       <style
         dangerouslySetInnerHTML={{
           __html:
@@ -35,7 +30,6 @@ export default function ResumeView() {
         }}
       />
 
-      {/* Top bar: back (left) + download (right) */}
       <div className="mx-auto w-full max-w-4xl shrink-0 px-4 pt-16 md:pt-24">
         <motion.div
           initial={{ opacity: 0, y: -6 }}
@@ -51,21 +45,18 @@ export default function ResumeView() {
             Back to portfolio
           </Link>
           <Button asChild>
-            
+            <Link
               href={RESUME_PATH}
               download
-              className="group flex gap-2 text-sm"
-            >
+              className="group flex gap-2 text-sm">
               <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
               Download PDF
-            </a>
+            </Link>
           </Button>
         </motion.div>
       </div>
 
-      {/* PDF viewer — centered on mobile (short A4 card), top-aligned on desktop (tall) */}
       <div className="mx-auto flex w-full max-w-4xl flex-1 items-center justify-center px-2 pb-6 md:items-start md:px-4 md:pb-24">
-        {/* opacity-only animation: a transformed ancestor would trap the fixed doodle FAB */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -78,11 +69,8 @@ export default function ResumeView() {
                 Résumé not uploaded yet
               </p>
               <p className="max-w-sm text-sm text-neutral-600">
-                Add the PDF at{" "}
-                <code className="rounded bg-neutral-100 px-1 py-0.5">
-                  public{RESUME_PATH}
-                </code>{" "}
-                and redeploy. The filename must match exactly.
+                Add the PDF at public{RESUME_PATH} and redeploy. The filename
+                must match exactly.
               </p>
             </div>
           ) : (
