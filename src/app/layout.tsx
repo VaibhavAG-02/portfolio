@@ -7,6 +7,7 @@ import Script from "next/script";
 import SiteFrame from "@/components/site-frame";
 import { Providers } from "@/components/providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 /* Body/base font — Space Grotesk, bound to --font-sans (applied as `font-sans`
  * on <html>). Everything that isn't a heading inherits this. */
@@ -86,6 +87,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
+        <SpeedInsights />
       </body>
     </html>
   );
